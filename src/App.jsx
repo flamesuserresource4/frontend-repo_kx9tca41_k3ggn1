@@ -1,28 +1,30 @@
-import { useState } from 'react'
+import React from 'react';
+import HeroCover from './components/HeroCover';
+import FeatureGrid from './components/FeatureGrid';
+import AIDemoPanel from './components/AIDemoPanel';
+import ExplorePreview from './components/ExplorePreview';
 
-function App() {
-  const [count, setCount] = useState(0)
-
+const App = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50 flex items-center justify-center">
-      <div className="bg-white p-8 rounded-lg shadow-lg">
-        <h1 className="text-3xl font-bold text-gray-800 mb-4">
-          Vibe Coding Platform
-        </h1>
-        <p className="text-gray-600 mb-6">
-          Your AI-powered development environment
-        </p>
-        <div className="text-center">
-          <button
-            onClick={() => setCount(count + 1)}
-            className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded"
-          >
-            Count is {count}
-          </button>
-        </div>
-      </div>
-    </div>
-  )
-}
+    <div className="min-h-screen w-full bg-gradient-to-b from-black via-[#0b0b0f] to-black text-white">
+      {/* Hero with interactive Spline scene */}
+      <HeroCover />
 
-export default App
+      {/* Feature highlights */}
+      <FeatureGrid />
+
+      {/* AI chat demo (frontend-only mock) */}
+      <AIDemoPanel />
+
+      {/* Explore destination previews */}
+      <ExplorePreview />
+
+      {/* Footer */}
+      <footer className="border-t border-white/10 py-8 text-center text-sm text-white/60">
+        Built with React, Tailwind, Framer Motion, and an interactive Spline cover. Future updates will add real auth, chat, maps, and AI backends.
+      </footer>
+    </div>
+  );
+};
+
+export default App;
