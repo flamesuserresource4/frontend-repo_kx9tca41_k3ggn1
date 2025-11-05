@@ -1,14 +1,25 @@
 import React from 'react';
+import Navbar from './components/Navbar';
 import HeroCover from './components/HeroCover';
+import StatsRibbon from './components/StatsRibbon';
 import FeatureGrid from './components/FeatureGrid';
 import AIDemoPanel from './components/AIDemoPanel';
+import MatchShowcase from './components/MatchShowcase';
 import ExplorePreview from './components/ExplorePreview';
+import HowItWorks from './components/HowItWorks';
+import Footer from './components/Footer';
 
 const App = () => {
   return (
     <div className="min-h-screen w-full bg-gradient-to-b from-black via-[#0b0b0f] to-black text-white">
+      <Navbar />
       {/* Hero with interactive Spline scene */}
-      <HeroCover />
+      <div className="pt-14">
+        <HeroCover />
+      </div>
+
+      {/* Stats */}
+      <StatsRibbon />
 
       {/* Feature highlights */}
       <FeatureGrid />
@@ -16,13 +27,18 @@ const App = () => {
       {/* AI chat demo (frontend-only mock) */}
       <AIDemoPanel />
 
-      {/* Explore destination previews */}
-      <ExplorePreview />
+      {/* AI Match previews */}
+      <MatchShowcase />
 
-      {/* Footer */}
-      <footer className="border-t border-white/10 py-8 text-center text-sm text-white/60">
-        Built with React, Tailwind, Framer Motion, and an interactive Spline cover. Future updates will add real auth, chat, maps, and AI backends.
-      </footer>
+      {/* Explore destination previews */}
+      <section id="explore">
+        <ExplorePreview />
+      </section>
+
+      {/* How it works */}
+      <HowItWorks />
+
+      <Footer />
     </div>
   );
 };
