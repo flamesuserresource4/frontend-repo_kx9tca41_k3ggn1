@@ -8,7 +8,7 @@ const NavLink = ({ href, children }) => (
   </a>
 );
 
-const Navbar = () => {
+const Navbar = ({ onLogin, onSignup }) => {
   const [open, setOpen] = useState(false);
 
   return (
@@ -29,10 +29,16 @@ const Navbar = () => {
         </nav>
 
         <div className="hidden items-center gap-2 md:flex">
-          <button className="inline-flex items-center gap-2 rounded-xl border border-white/15 bg-white/5 px-3 py-2 text-sm font-medium text-white hover:bg-white/10">
+          <button
+            onClick={onLogin}
+            className="inline-flex items-center gap-2 rounded-xl border border-white/15 bg-white/5 px-3 py-2 text-sm font-medium text-white hover:bg-white/10"
+          >
             <LogIn className="h-4 w-4" /> Log in
           </button>
-          <button className="inline-flex items-center gap-2 rounded-xl bg-white px-3 py-2 text-sm font-semibold text-black hover:bg-white/90">
+          <button
+            onClick={onSignup}
+            className="inline-flex items-center gap-2 rounded-xl bg-white px-3 py-2 text-sm font-semibold text-black hover:bg-white/90"
+          >
             <UserPlus className="h-4 w-4" /> Sign up
           </button>
         </div>
@@ -62,10 +68,16 @@ const Navbar = () => {
                 <NavLink href="#explore">Explore</NavLink>
                 <NavLink href="#how">How it works</NavLink>
                 <div className="mt-2 flex gap-2">
-                  <button className="inline-flex flex-1 items-center justify-center gap-2 rounded-xl border border-white/15 bg-white/5 px-3 py-2 text-sm font-medium text-white hover:bg-white/10">
+                  <button
+                    onClick={onLogin}
+                    className="inline-flex flex-1 items-center justify-center gap-2 rounded-xl border border-white/15 bg-white/5 px-3 py-2 text-sm font-medium text-white hover:bg-white/10"
+                  >
                     <LogIn className="h-4 w-4" /> Log in
                   </button>
-                  <button className="inline-flex flex-1 items-center justify-center gap-2 rounded-xl bg-white px-3 py-2 text-sm font-semibold text-black hover:bg-white/90">
+                  <button
+                    onClick={onSignup}
+                    className="inline-flex flex-1 items-center justify-center gap-2 rounded-xl bg-white px-3 py-2 text-sm font-semibold text-black hover:bg-white/90"
+                  >
                     <UserPlus className="h-4 w-4" /> Sign up
                   </button>
                 </div>
